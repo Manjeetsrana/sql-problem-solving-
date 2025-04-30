@@ -32,3 +32,12 @@ INSERT INTO employees_info (employee_id, employee_name, age, department, salary)
 (21, 'Mahesh', 30, 'Engineering', 75000.00),
 (22, 'Mahi', 32, 'Marketing', 65000.00),
 (23, 'Reddy', 38, 'Sales', 48000.00);
+
+
+
+-- This table conntains info like ID, name, age, department, and salaries.
+
+--  Find the percentage of people who work in each department. 
+
+select department, count(employee_id) as dep_wise, count(employee_id)/(select count(*) from employees_info) *100 as percent from employees_info 
+group by department	
